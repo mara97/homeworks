@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body>
+
+    <h1>Art Gallery</h3>
+
+    <div class="slider">
+      
+      <div class="oxlar"><button onclick="left()"><span> < </span></button></div>
+      
+      <div class="bigImage" ><img src="images/big.jpg" id="big"/ class="bigImage"></div>
+      
+      <div class="oxlar"> <button onclick="right()"><span> > </span></button></div>
+
+      <div class="smSlider">
+      
+        <div class="smImage"><img src="images/big.jpg" onclick="run(5)"  class="smImage"/></div>
+        
+        <div class="smImage" onclick="run(0)"><img src="images/4.jpg" id="sekil1" class="smImage"/></div>
+        
+        <div class="smImage"><img src="images/2.jpg" onclick="run(1)"  class="smImage"/></div>
+        
+        <div class="smImage"><img src="images/3.jpg" onclick="run(2)"  class="smImage"/></div>
+        
+        <div class="smImage"><img src="images/1.jpg" onclick="run(3)"  class="smImage"/></div>
+
+        <div class="smImage"><img src="images/5.jpg" onclick="run(4)"  class="smImage"/></div>
+      
+      </div>
+
+    </div>
+ 
+    <script type="text/javascript">
+    
+    var i;
+    
+    smImages=["images/4.jpg","images/2.jpg","images/3.jpg","images/1.jpg","images/5.jpg","images/big.jpg"];
+    
+    function run(a){
+      
+      i=a;
+
+      document.getElementById('big').src=smImages[i];
+
+    }
+    
+    function right(){
+       
+       click();
+
+        function click(){
+          
+           i++;
+
+            if(i<5){
+            
+                document.getElementById('big').src=smImages[i];
+            
+            }else{
+
+                document.getElementById('big').src=smImages[5];
+                
+                i=-1;
+        
+          }
+       }
+    }
+
+    function left(){
+
+      click();
+
+        function click(){
+
+           i--;
+
+          if(i>-1){
+              
+              document.getElementById('big').src=smImages[i];
+          
+          }else{
+
+              document.getElementById('big').src=smImages[5];
+              i=5;
+          }
+        }
+    }
+
+    </script>
+  </body>
+</html>
