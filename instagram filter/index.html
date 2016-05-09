@@ -1,0 +1,113 @@
+<html>
+<head>
+	<title>
+Instagram Filters
+	</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+		box-sizing:border-box;
+	}
+		.main{
+			width:960px;
+			height:auto;
+			margin:20px auto;
+			background:#f8f8f8;
+			border:2px solid gray;
+			overflow-x:hidden;
+		}
+		.pic{
+			width:300px;
+			margin:0 auto;
+		}
+		.filter{
+			width:100%;
+			height:200px;
+			border:1px solid purple;
+			display:flex;
+			flex-direction:row;
+			white-space:nowrap;
+			
+
+		}
+		.filter img{
+			width:200px;
+			height:100%;
+			border:2px solid #f8f8f8;	
+		}
+		.blur3{
+			-webkit-filter: blur(3px);
+		}
+		.brightness{
+			-webkit-filter: brightness(100%);
+		}
+		.contrast{
+			-webkit-filter:contrast(200%);
+		}
+		.shadow{
+			-webkit-filter:drop-shadow(8px 8px 10px gray);
+		}
+		.grayscale{
+			-webkit-filter:grayscale(70%);
+		}
+		.hue-rotate{
+			-webkit-filter:hue-rotate(90deg);
+		}
+		.invert{
+			-webkit-filter:invert(80%);
+		}
+		.opacity{
+			-webkit-filter:opacity(30%);
+		}
+		.saturate{
+			-webkit-filter:saturate(8);
+		}
+		.sepia{
+			-webkit-filter:sepia(70%);
+		}
+		.contBright{
+			-webkit-filter:contrast(200%) brightness(150%);
+		}
+
+		</style>
+</head>
+<body>
+<div class="main">
+	<div class="pic">
+		<img src="images/view3.jpg">
+	</div>
+	<div class="filter">
+		<img src="images/view3.jpg" class="blur3">
+		<img src="images/view3.jpg" class="brightness">
+		<img src="images/view3.jpg" class="contrast">
+		<img src="images/view3.jpg" class="shadow">
+		<img src="images/view3.jpg" class="grayscale">
+		<img src="images/view3.jpg" class="hue-rotate">
+		<img src="images/view3.jpg" class="invert">
+		<img src="images/view3.jpg" class="opacity">
+		<img src="images/view3.jpg" class="saturate">
+		<img src="images/view3.jpg" class="sepia">
+		<img src="images/view3.jpg" class="contBright">
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var current=0;
+		$(".main").mousemove(function(event){
+			var clientCoords=event.clientX;
+			clientCoords=current-clientCoords;
+			$(".filter").css("margin-left",clientCoords+"px");
+			$(".filter img").click(function(){				
+				var effect=$(this).attr("class");
+				// console.log(effect);
+				$(".pic img").attr('class', effect);
+		});
+
+		})
+		
+	});
+</script>
+</html>
