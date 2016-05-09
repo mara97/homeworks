@@ -1,0 +1,158 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+	var mainDiv=document.createElement("div");		
+	mainDiv.setAttribute("class","main");		
+	document.body.appendChild(mainDiv);
+	var bigBorder=document.createElement("div");
+
+	bigBorder.setAttribute("class","solidBorder");
+
+	mainDiv.appendChild(bigBorder);
+			
+	var borderDiv=document.createElement("div");
+			
+	borderDiv.setAttribute("class","border");
+			
+	bigBorder.appendChild(borderDiv);
+
+	var firstLine=document.createElement("div");
+
+	firstLine.setAttribute("class","firstLine");
+
+	borderDiv.appendChild(firstLine);
+
+	var week=document.createElement("div");
+	week.setAttribute("class","week");
+
+	firstLine.appendChild(week);
+
+	var a=new Date();
+
+	var weekday=new Array();
+	weekday[0]="Sunday";
+	weekday[1]="Monday";
+	weekday[2]="Tuesday";
+	weekday[3]="Wednesday";
+	weekday[4]="Thursday";
+	weekday[5]="Friday";
+	weekday[6]="Saturday";
+
+	week.innerText=weekday[a.getDay()];
+
+	var date=document.createElement("div");
+
+	date.setAttribute("class","date");
+
+	firstLine.appendChild(date);
+
+	var b=new Date();
+
+	var month = new Array();
+	month[0] = "Jan";
+	month[1] = "Feb";
+	month[2] = "March";
+	month[3] = "Apr";
+	month[4] = "May";
+	month[5] = "June";
+	month[6] = "July";
+	month[7] = "Aug";
+	month[8] = "Sept";
+	month[9] = "Oct";
+	month[10] = "Nov";
+	month[11] = "Dec";
+
+	
+	date.innerText=month[b.getMonth()]+"  "+b.getDate();
+	
+	var hours=document.createElement("div");
+		
+	hours.setAttribute("class","hours");
+
+	borderDiv.appendChild(hours);
+
+	function vrema()
+	{
+		var time=new Date();
+		var seconds = time.getSeconds();
+		if(seconds<10)
+		{
+			seconds = "0"+seconds;
+		}
+		var minutes = time.getMinutes();
+
+		if(minutes<10)
+		{
+			minutes = "0"+minutes;
+		}
+		hours.innerText=time.getHours()+":"+minutes+":"+seconds;
+	}
+	setInterval(vrema,1000);
+		 
+	var casovayaStrelka=document.createElement("div");
+
+	casovayaStrelka.setAttribute("id","casovayaStrelka");
+
+	borderDiv.appendChild(casovayaStrelka);
+
+
+ 
+ 
+
+    var minutnayaStrelka=document.createElement("div");
+
+	minutnayaStrelka.setAttribute("id","minutnayaStrelka");
+
+	borderDiv.appendChild(minutnayaStrelka);
+
+
+
+    var sekundnayaStrelka=document.createElement("div");
+
+	sekundnayaStrelka.setAttribute("id","sekundnayaStrelka");
+
+    borderDiv.appendChild(sekundnayaStrelka);
+
+	function myF()
+	{
+        setInterval(seconds,1000);
+		function seconds()
+		{
+			var time=new Date();
+			
+			var seconds = time.getSeconds();
+			
+			var minutes = time.getMinutes();
+			
+			var hours = time.getHours();
+		    
+		    document.getElementById("sekundnayaStrelka").style.transform="rotate("+seconds*6+"deg)";
+		    
+		    document.getElementById("minutnayaStrelka").style.transform="rotate("+minutes*6+"deg)";
+			
+			document.getElementById("casovayaStrelka").style.transform="rotate("+hours*30+"deg)";
+		 
+		}
+	}
+ 	myF();
+
+
+    var dot=document.createElement("div");
+
+	dot.setAttribute("id","dot");
+
+	borderDiv.appendChild(dot);
+
+</script>
+
+
+
+</body>
+</html>
