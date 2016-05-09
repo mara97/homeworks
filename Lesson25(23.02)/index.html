@@ -1,0 +1,89 @@
+<html>
+<head>
+	<title></title>
+	<style>
+		.tablecik{
+			border:1px solid purple;
+			background:gray;
+			line-height:50px;
+			width:50px;
+			text-align:center;
+        }
+        table{
+        	border:1px solid purple;
+        }
+	</style>
+	<script type="text/javascript"  src="jquery.js"></script>
+</head>
+<body>
+
+	
+
+	
+		
+	<input type="text" placeholder="Adiniz" id="ad">
+	<input type="text" placeholder="Soyadiniz" id="soyad">
+	<input type="text" placeholder="Yasiniz" id="yas">
+	
+<script type="text/javascript">
+	var birthArray=[1997,1,2];
+	var table=document.createElement("table");
+	//table.setAttribute("class", "");
+	
+	document.body.appendChild(table);
+	function add(){
+		var tr=document.createElement("tr");
+
+		table.appendChild(tr);
+
+
+
+		var td1=document.createElement("td");
+		tr.appendChild(td1);
+		var ad=document.getElementById("ad").value;
+		td1.innerText=ad;
+		td1.setAttribute("class","tablecik");
+		var td2=document.createElement("td");
+		tr.appendChild(td2);
+		var soyad=document.getElementById("soyad").value;
+		td2.innerText=soyad;
+		td2.setAttribute("class","tablecik");
+		var td3=document.createElement("td");
+		tr.appendChild(td3);
+		var yas=document.getElementById("yas").value;
+		td3.innerText=yas;
+		td3.setAttribute("class","tablecik");
+	}
+
+
+	function hesabla () {
+		
+		var minutes = 1000 * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var now=new Date();
+		nowYears=Math.floor(now.getTime()/years);
+		nowDays=Math.floor(now.getTime()%years/days);
+		nowHours=Math.floor(now.getTime()%years%days/hours);
+		nowMinutes=Math.floor(now.getTime()%years%days%hours/minutes);
+		
+		var birth= new Date(birthArray[0],birthArray[1],birthArray[2]);
+		birthYears=Math.floor(birth.getTime()/years)
+		birthDays=Math.floor(birth.getTime()%years/days)
+		birthHours=Math.floor(birth.getTime()/years%days/hours);
+		birthMinutes=Math.floor(birth.getTime()/years/days%hours/minutes);
+		//document.write(birthHours+"<br>");
+		ferqYears=nowYears-birthYears;
+		ferqDays=nowDays-birthDays;
+		ferqHours=nowHours-birthHours;
+		ferqMinutes=nowMinutes-birthMinutes;
+		document.write(ferqYears+"."+ferqDays+"."+ferqHours+"."+ferqMinutes);
+	}
+		
+   </script>
+
+	<button onclick="add()">Add Person</button>
+	<!-- <button onclick="hesabla()">Omrun</button> -->
+</body>
+</html>
