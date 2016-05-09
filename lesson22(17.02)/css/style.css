@@ -1,0 +1,23 @@
+.Ldiv{
+   width: 960px;
+   height: auto;
+   margin:0 auto;
+   background: gray; 
+   display: flex;
+   flex-direction:row; 
+   justify-content:space-around; 
+   margin-bottom: 20px;
+
+}
+.smImage{
+	width: 290px;
+	height: 300px;
+}
+.smDiv{
+	width: 400px;
+	height: 300px;
+	background: purple;
+	   display: flex;
+   flex-direction:row; 
+   justify-content:space-around; 
+}
