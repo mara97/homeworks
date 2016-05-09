@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	
+	<button onclick="gal()">Sekiller</button>
+	
+	<button onclick="sil()">Sil</button>
+
+<script>
+
+var myDiv=document.createElement("div");
+
+document.body.appendChild(myDiv);
+
+myDiv.setAttribute("class","main");
+
+ var srclar=["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg"];
+
+ i=0;
+function gal(){
+
+	var img=document.createElement("img");
+	
+	img.setAttribute("src",srclar[i]);
+	img.setAttribute("class","imgler");
+	if(i%3==0){
+		var brline=document.createElement("br");
+        myDiv.appendChild(brline);
+	}
+	myDiv.appendChild(img);
+
+    i++;
+    if(i>=srclar.length){
+    	i=0;
+    }
+}
+function sil(){
+	myDiv.removeChild(myDiv.lastChild);
+}
+
+
+
+
+
+
+
+var myDiv=document.createElement("div");
+ 
+ document.body.appendChild(myDiv);
+
+ myDiv.setAttribute("class","main");
+
+
+
+setTimeout(tadam,2000);
+
+
+
+function tadam(){
+	  var timeDiv=document.createElement("div");
+
+      myDiv.appendChild(timeDiv);
+   
+   timeDiv.setAttribute("class","timer");
+
+
+    var time=document.createElement("span");
+
+
+timeDiv.appendChild(time);
+
+setInterval(timer,1000);
+
+t=10;
+
+function timer(){
+    
+     time.innerHTML=t;
+     t--;
+}
+
+setTimeout(yoxol,12000);
+
+}
+
+
+
+function yoxol(){
+	
+	myDiv.removeChild(myDiv.firstChild);
+}
+
+
+
+
+
+</script>
+</body>
+</html>
